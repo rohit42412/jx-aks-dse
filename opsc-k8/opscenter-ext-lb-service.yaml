@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: opscenter-ext-lb
+  labels:
+    app: opscenter
+spec:
+  type: LoadBalancer
+  ports:
+  - name: opsc-gui-port
+    port: 80
+    protocol: TCP
+    targetPort: 8888
+  selector:
+    app: opscenter
+
